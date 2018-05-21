@@ -556,7 +556,6 @@ object Form1: TForm1
     Height = 40
     Align = alBottom
     TabOrder = 0
-    ExplicitLeft = 8
     object sSpeedButton1: TsSpeedButton
       Left = 8
       Top = 10
@@ -694,6 +693,7 @@ object Form1: TForm1
       Height = 25
       Caption = 'sButton1'
       TabOrder = 1
+      OnClick = sButton1Click
     end
   end
   object sDBGrid1: TsDBGrid

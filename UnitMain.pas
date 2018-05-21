@@ -45,6 +45,7 @@ type
     procedure sSpeedButton2Click(Sender: TObject);
     procedure sDBGrid1CellClick(Column: TColumn);
     procedure sDBGrid1DblClick(Sender: TObject);
+    procedure sButton1Click(Sender: TObject);
   private
     { Private declarations }
     procedure ru_lower(AFunc: TSQLiteFunctionInstance;
@@ -63,7 +64,6 @@ var
   AppPath,SkinName,SkinPath:string;
   oini: TIniFile;
   GRDID:string;
-  GridPoz: integer;
 
 implementation
 
@@ -136,13 +136,13 @@ begin
   FDQuery1.SQL.Clear;
   FDQuery1.SQL.Add(s);
   FDQuery1.OpenOrExecute;
-
-  sDBGrid1.Columns[0].Visible := false;
+  sDBGrid1.Columns[0].Visible := false;
 
   AutoColumns(sDBGrid1);
+  if GRDID <> '' then  
+    sDBGrid1.DataSource.DataSet.Locate('id',GRDID,[loPartialKey]);
 
-  sDbGrid1.DataSource.DataSet.RecNo := GridPoz;
-
+  GRDID := FDQuery1.FieldByName('ID').AsString;
 end;
 
 procedure TForm1.ru_lower(AFunc: TSQLiteFunctionInstance;
@@ -168,7 +168,6 @@ procedure TForm1.FormCreate(Sender: TObject);
     sl:TStringList;
     i:integer;
   begin
-    GridPoz := 1;
     Form1.Height := 600;
     Form1.Width := 800;
     Form1.sDBGrid1.Align := alTop;
@@ -245,9 +244,14 @@ begin
 
 end;
 
+procedure TForm1.sButton1Click(Sender: TObject);
+begin
+//  ShowMessage(sDBGrid1.DataSource.DataSet.FindField('id').Asstring);
+
+end;
+
 procedure TForm1.sDBGrid1CellClick(Column: TColumn);
 begin
-  GridPoz := sDbGrid1.DataSource.DataSet.RecNo;
   GRDID := FDQuery1.FieldByName('ID').AsString;
 end;
 
@@ -267,41 +271,24 @@ begin
   Add := TAdd.create(self);
   Add.ShowModal;
   Add.free;
-  GRDID := '';
   fsearch(AnsiLowerCase(sEdit1.Text));
 end;
 
 procedure TForm1.sSpeedButton2Click(Sender: TObject);
-  var
-    QueryEdit: TFDQuery;
-    s:string;
 begin
-  if GRDID <> '' then
-    s := 'select * from one where id = ' + GRDID
-  else
-    begin
-      MessageDlg('Вначале нужно выбрать строку',
-      mtWarning,[mbOk], 0);
-      abort;
-    end;
-
-  QueryEdit := TFDQuery.Create(nil);
-  QueryEdit.Connection := FDConnection1;
-  
-  QueryEdit.Close;
-  QueryEdit.SQL.Clear;
-  QueryEdit.SQL.Add(s);
-  QueryEdit.OpenOrExecute;
+  if GRDID = '' then
+  begin
+    MessageDlg('Вначале нужно выбрать строку',
+    mtWarning,[mbOk], 0);
+    abort;
+  end;
   Add := TAdd.create(self);
   Add.Caption := 'Редактирование';
-  Add.sEdit1.Text := QueryEdit.FieldByName('Field3').AsString;
-  Add.sEdit2.Text := QueryEdit.FieldByName('Field4').AsString;
-  Add.sEdit3.Text := QueryEdit.FieldByName('Field5').AsString;
+  Add.sEdit1.Text := sDBGrid1.DataSource.DataSet.FieldByName('Field3').AsString;
+  Add.sEdit2.Text := sDBGrid1.DataSource.DataSet.FieldByName('Field4').AsString;
+  Add.sEdit3.Text := sDBGrid1.DataSource.DataSet.FieldByName('Field5').AsString;
   Add.ShowModal;
   Add.free;
-  QueryEdit.Close;
-  QueryEdit.Free;
-  GRDID := '';
   fsearch(AnsiLowerCase(sEdit1.Text));
 end;
 
@@ -334,7 +321,8 @@ begin
       QueryDel.Execute;
       QueryDel.Close;
       QueryDel.Free;
-      GRDID:='';
+      sDbGrid1.DataSource.DataSet.Next();
+      GRDID := FDQuery1.FieldByName('ID').AsString;
       fsearch(AnsiLowerCase(sEdit1.Text));
     end;
 
