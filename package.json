@@ -1,0 +1,16 @@
+{
+    "name": "sklad",
+    "repository": "_",
+    "license": "MIT",
+    "version": "0.0.1",
+    "private": false,
+    "scripts": {
+        
+    },
+    "devDependencies": {
+        
+    },
+    "dependencies": {
+       
+    }
+}
