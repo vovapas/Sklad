@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899.12.30 00:00:00.000.755,C:\Users\User\Downloads\sqllite\UnitMain.dfm=C:\Users\User\Downloads\sqllite\Unit1.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.755,C:\Users\User\Downloads\sqllite\UnitMain.pas=C:\Users\User\Downloads\sqllite\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.569,=C:\Users\vova\Desktop\sqllite\Unit2.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.094,=C:\Users\vova\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.171,D:\total\Delphi\sqllite\Unit1.dfm=C:\Users\vova\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.171,D:\total\Delphi\sqllite\Unit1.pas=C:\Users\vova\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.709,C:\Users\vova\Desktop\sqllite\UnitAdd.pas=C:\Users\vova\Desktop\sqllite\Unit2.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.709,C:\Users\vova\Desktop\sqllite\UnitAdd.dfm=C:\Users\vova\Desktop\sqllite\Unit2.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.811,D:\total\Delphi\sqllite\Project1.dproj=C:\Users\vova\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.071,C:\Users\User\Downloads\sqllite\Склад.dproj=C:\Users\User\Downloads\sqllite\Project1.dproj</Transaction>
+    <Transaction>2018.05.21 11:56:00.830,=C:\Users\User\Downloads\Склад\Unit1.pas</Transaction>
+    <Transaction>2018.05.21 11:56:21.891,=C:\Users\User\Downloads\Склад\Unit2.pas</Transaction>
+    <Transaction>2018.05.21 11:56:43.764,C:\Users\User\Downloads\Склад\UnitConnection.dfm=C:\Users\User\Downloads\Склад\Unit2.dfm</Transaction>
+    <Transaction>2018.05.21 11:56:43.764,C:\Users\User\Downloads\Склад\UnitConnection.pas=C:\Users\User\Downloads\Склад\Unit2.pas</Transaction>
+  </Transactions>
+</BorlandProject>
