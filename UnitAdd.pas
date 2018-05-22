@@ -18,6 +18,7 @@ type
     sEdit3: TsEdit;
     procedure sButton1Click(Sender: TObject);
     procedure FormShow(Sender: TObject);
+    procedure sEdit2KeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
   private
     { Private declarations }
   public
@@ -67,5 +68,14 @@ procedure TAdd.sButton1Click(Sender: TObject);
     QueryAdd.Free;
     close;
   end;
+
+procedure TAdd.sEdit2KeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+  if Key = VK_RETURN then
+  begin
+    sButton1Click(Self);
+  end;
+end;
 
 end.

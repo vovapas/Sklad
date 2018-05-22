@@ -721,6 +721,7 @@ object Form1: TForm1
     TitleFont.Style = []
     OnCellClick = sDBGrid1CellClick
     OnDblClick = sDBGrid1DblClick
+    OnKeyDown = sDBGrid1KeyDown
   end
   object FDConnection1: TFDConnection
     LoginPrompt = False

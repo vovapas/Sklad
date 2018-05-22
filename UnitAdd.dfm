@@ -32,6 +32,7 @@ object Add: TAdd
     Width = 192
     Height = 21
     TabOrder = 1
+    OnKeyDown = sEdit2KeyDown
   end
   object sEdit2: TsEdit
     Left = 8
@@ -39,6 +40,7 @@ object Add: TAdd
     Width = 192
     Height = 21
     TabOrder = 2
+    OnKeyDown = sEdit2KeyDown
   end
   object sEdit3: TsEdit
     Left = 8
@@ -46,5 +48,6 @@ object Add: TAdd
     Width = 192
     Height = 21
     TabOrder = 3
+    OnKeyDown = sEdit2KeyDown
   end
 end

@@ -47,6 +47,8 @@ type
     procedure sDBGrid1DblClick(Sender: TObject);
     procedure sButton1Click(Sender: TObject);
     procedure FormResize(Sender: TObject);
+    procedure sDBGrid1KeyDown(Sender: TObject; var Key: Word;
+      Shift: TShiftState);
   private
     { Private declarations }
     procedure ru_lower(AFunc: TSQLiteFunctionInstance;
@@ -267,6 +269,27 @@ end;
 procedure TForm1.sDBGrid1DblClick(Sender: TObject);
 begin
   sSpeedButton2Click(Self);
+end;
+
+procedure TForm1.sDBGrid1KeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+  GRDID := FDQuery1.FieldByName('ID').AsString;
+
+  if Key = VK_DELETE then
+  begin
+    sSpeedButton3Click(Self);
+  end;
+
+  if Key = VK_INSERT then
+  begin
+    sSpeedButton1Click(Self);
+  end;
+
+  if Key = VK_RETURN then
+  begin
+    sSpeedButton2Click(Self);
+  end;
 end;
 
 procedure TForm1.sEdit1Change(Sender: TObject);
