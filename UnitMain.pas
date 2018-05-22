@@ -46,6 +46,7 @@ type
     procedure sDBGrid1CellClick(Column: TColumn);
     procedure sDBGrid1DblClick(Sender: TObject);
     procedure sButton1Click(Sender: TObject);
+    procedure FormResize(Sender: TObject);
   private
     { Private declarations }
     procedure ru_lower(AFunc: TSQLiteFunctionInstance;
@@ -168,10 +169,12 @@ procedure TForm1.FormCreate(Sender: TObject);
     sl:TStringList;
     i:integer;
   begin
-    Form1.Height := 600;
-    Form1.Width := 800;
-    Form1.sDBGrid1.Align := alTop;
-    Form1.sDBGrid1.Height := 515;
+    Height := 600;
+    Width := 800;
+    sDBGrid1.Align := alClient;
+    sEdit1.Left := Round(sPanel1.Width / 2 - 100);
+    sButton1.Left := sPanel1.Width-43;
+
     sDBGrid1.DataSource := DataSource1;
 
     AppPath:=ExtractFilePath(Application.ExeName);
@@ -217,6 +220,12 @@ procedure TForm1.FormCreate(Sender: TObject);
        mSkins.Add(mi);
      end;
  sl.Free;
+end;
+
+procedure TForm1.FormResize(Sender: TObject);
+begin
+  sEdit1.Left := Round(sPanel1.Width / 2 - 100);
+  sButton1.Left := sPanel1.Width-43;
 end;
 
 procedure TForm1.mSelectSkinClick(Sender: TObject);

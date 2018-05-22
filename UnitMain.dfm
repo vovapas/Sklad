@@ -1,11 +1,12 @@
 object Form1: TForm1
   Left = 0
   Top = 0
-  BorderStyle = bsSingle
   Caption = #1054#1089#1090#1072#1090#1082#1080' '#1085#1072' '#1089#1082#1083#1072#1076#1077
-  ClientHeight = 426
-  ClientWidth = 752
+  ClientHeight = 439
+  ClientWidth = 784
   Color = clBtnFace
+  Constraints.MinHeight = 300
+  Constraints.MinWidth = 500
   DefaultMonitor = dmMainForm
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -547,15 +548,18 @@ object Form1: TForm1
   OldCreateOrder = False
   Position = poDesktopCenter
   OnCreate = FormCreate
+  OnResize = FormResize
   PixelsPerInch = 96
   TextHeight = 13
   object sPanel1: TsPanel
     Left = 0
-    Top = 386
-    Width = 752
+    Top = 399
+    Width = 784
     Height = 40
     Align = alBottom
     TabOrder = 0
+    ExplicitTop = 135
+    ExplicitWidth = 760
     object sSpeedButton1: TsSpeedButton
       Left = 8
       Top = 10
@@ -676,10 +680,17 @@ object Form1: TForm1
       OnClick = sSpeedButton3Click
     end
     object sEdit1: TsEdit
-      Left = 200
-      Top = 10
-      Width = 177
-      Height = 21
+      Left = 300
+      Top = 8
+      Width = 200
+      Height = 25
+      AutoSize = False
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
       TabOrder = 0
       OnChange = sEdit1Change
       SkinData.SkinSection = 'EDIT'
@@ -687,11 +698,11 @@ object Form1: TForm1
       BoundLabel.Caption = #1055#1086#1080#1089#1082
     end
     object sButton1: TsButton
-      Left = 456
+      Left = 736
       Top = 8
-      Width = 75
+      Width = 35
       Height = 25
-      Caption = 'sButton1'
+      Caption = 'Test'
       TabOrder = 1
       OnClick = sButton1Click
     end
@@ -714,29 +725,29 @@ object Form1: TForm1
   object FDConnection1: TFDConnection
     LoginPrompt = False
     Transaction = FDTransaction1
-    Left = 624
+    Left = 696
   end
   object FDQuery1: TFDQuery
     Filtered = True
     Connection = FDConnection1
     SQL.Strings = (
       '')
-    Left = 680
+    Left = 752
     Top = 48
   end
   object DataSource1: TDataSource
     DataSet = FDQuery1
-    Left = 624
+    Left = 696
     Top = 48
   end
   object FDGUIxWaitCursor1: TFDGUIxWaitCursor
     Provider = 'Forms'
-    Left = 680
+    Left = 752
     Top = 96
   end
   object MainMenu1: TMainMenu
-    Left = 688
-    Top = 312
+    Left = 720
+    Top = 320
     object f1: TMenuItem
       Caption = 'File'
     end
@@ -779,8 +790,8 @@ object Form1: TForm1
     ThirdParty.ThirdScrollBar = ' '#13#10
     ThirdParty.ThirdStaticText = ' '#13#10
     ThirdParty.ThirdNativePaint = ' '#13#10
-    Left = 688
-    Top = 352
+    Left = 720
+    Top = 360
   end
   object sSkinProvider1: TsSkinProvider
     AddedTitle.Font.Charset = DEFAULT_CHARSET
@@ -790,15 +801,15 @@ object Form1: TForm1
     AddedTitle.Font.Style = []
     SkinData.SkinSection = 'FORM'
     TitleButtons = <>
-    Left = 720
-    Top = 352
+    Left = 752
+    Top = 360
   end
   object FDTransaction1: TFDTransaction
     Connection = FDConnection1
-    Left = 680
+    Left = 752
   end
   object FDPhysSQLiteDriverLink1: TFDPhysSQLiteDriverLink
-    Left = 624
+    Left = 696
     Top = 96
   end
 end
